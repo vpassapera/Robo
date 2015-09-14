@@ -33,6 +33,8 @@ class ApiGen extends BaseTask implements CommandInterface
     {
         if ($pathToApiGen) {
             $this->command = $pathToApiGen;
+        } elseif (file_exists('bin/apigen')) {
+            $this->command = 'bin/apigen';
         } elseif (file_exists('vendor/bin/apigen')) {
             $this->command = 'vendor/bin/apigen';
         } elseif (file_exists('apigen.phar')) {
